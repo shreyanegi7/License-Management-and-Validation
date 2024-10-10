@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>License Management</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>License Management Dashboard</h1>
+
+    <h2>Active Licenses</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>License Key</th>
+            <th>Status</th>
+        </tr>
+        {% for license in licenses %}
+        <tr>
+            <td>{{ license[0] }}</td>
+            <td>{{ license[1] }}</td>
+            <td>{{ license[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Revoke a License</h2>
+    <form action="/admin/revoke" method="POST">
+        <label for="license_key">License Key:</label>
+        <input type="text" id="license_key" name="license_key" required>
+        <button type="submit">Revoke License</button>
+    </form>
+</body>
+</html>

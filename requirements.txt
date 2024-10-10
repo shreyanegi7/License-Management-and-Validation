@@ -1,0 +1,5 @@
+Flask
+cryptography
+requests
+Flask-HTTPAuth
+Flask-SQLAlchemy  # If using SQLAlchemy
